@@ -1,0 +1,202 @@
+/*style para etiquetas
+*/
+h3{
+    color: turquoise;
+}
+head{
+    background-color: violet;
+}
+
+/*style para class
+*/
+
+.una-class{
+    color: white;
+    font-size: 50px;
+}
+    /*anidando etiqueta + class*/
+h4.una-class{
+    color: blue;
+}
+    /*dando style a varias class al mismo tiempo*/
+p .una-class .otra-class{
+    color: yellow;
+}
+
+
+/*style para id
+*/
+
+#un-id{
+    background-color: whitesmoke;
+}
+
+
+
+/*MARGENES Y PADDING*/
+
+/* margin: le indicamos de que lado queremos un margen externo
+
+el texto es una caja que ocupa el 100% del ancho de la pantalla
+fuera de la caja coloca un margen, si la caja tiene color, entonces los margenes los veras en blanco
+*/
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    margin: 10px; /*a todos los lados por igual*/
+
+    margin: 10px 20px 10px 10px;/*a cada lado: top rigth bottom left*/
+}
+
+
+/*padding: coloca un margen interno
+dentro de la caja coloca el margen, si la caja tiene color entonces los margenes colocados se veran con el color
+*/
+p{
+    padding: 10px;/*funciona igual que el margin - top rigth left bottom*/
+}
+
+
+
+/*color: de la letra
+background color: color de fondo
+*/
+
+
+/*los links <a> son elementos de linea - se colocan uno al lado del otro (la linea ocupa lo que ocupa el texto de la misma
+los parrafos <p> y otros son elementos de bloque - se colocan uno abajo del otro (el bloque ocupa toda la pantalla)*/
+
+/* le damos un cambio - display: flex*/
+/*a la clase padre le cambiamos el display, pero luego a la clase hija le cambiamos el tamaño y otros estilos*/
+p{
+    display: flex;
+}/* ahora los parrafos se veran en columnas uno al lado del otro*/
+p .class-hija{
+    padding: 20px;
+    width: 25%;/*del 100% de la pantalla ocupa el 25%, ideal si vas a poner 4 en linea*/
+}
+
+/*tenemos h3 de bloque y lo cambiamos a lineas*/
+h3{
+    display: inline-block;
+}
+/*tenemos un ancla <a> que es de linea, la cambiamos a bloque*/
+a{
+    display: block;/*terminan colocandose uno abajo del otro*/
+}
+/*pero tambien puedo darle al ancla un inline-block .. esto hace q sea de linea (uno al lado del otro) pero en bloques
+permitira mejor su manejo y ya coloca un pequeño margen 
+*/
+a{
+    display: inline-block;
+    text-decoration: none; /*quitamos la decoracion predeterminada, asi no se ve como un hypervinculo*/
+}
+/* ahora queremos 3 cajas de anclas, al centro y espaciadas un poco
+                una     otra    otras
+*/
+/*padre flex*/
+section{
+    display: flex;
+    justify-content: space-around;
+}
+section .a{
+    display: inline-block;
+}
+/*justify-content: 
+    center                          una otra otras
+    space-between     una               otra                    otras
+    space-around                una     otra     otras
+    flex-end                                        una   otra  otras
+    */                                      
+
+
+/*media query para diferentes pantallas*/
+@media (max-width: 600px){
+    /*una hoja de estilo para los pixeles de 0 a 600*/
+    /*aqui, donde la pantalla es mas chica, es bueno usar este estilo*/
+    a{
+        flex-direction: column; /* los coloca en una columna, uno debajo del otro, podemos darle unos margenes*/
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /*un boton cuando la pantalla es pequeña y despliega el menu de anclas*/
+    button{
+        margin: 10px;
+        color: chartreuse;
+        border: 2px solid red; /*borde de tamaño 2 solido y rojo*/
+        display: inline-block;
+    }
+    
+}
+@media (min-width: 601px){
+    /*una hoja de estilo para los pixeles de 601 en adelante*/
+    button{
+        display: none;/*por encima de los 600 no se muestra el boton*/
+    }
+}
+
+
+
+
+
+
+/*HOVER o style cuando pasamos el mouse por encima o cuando clickeamos 
+- valido para cualquier etiqueta, no solo para botones*/
+
+button{/*predeterminado*/
+    color: brown;
+
+}
+button:hover{/*cuando el mouse esta encima del boton cambia el color*/
+    color: chartreuse;
+}
+
+
+/*el ejercicio de tabla precios es bueno para entender mas sobre los estilos*/
+
+/*algo para ordenar los items*/
+.contenedor{
+    display: flex;
+    flex-direction: row; /*(predeterminado en fila)*/
+    flex-wrap: wrap; /*para que respete el tamaño establecido*/
+    justify-content: space-around; /*espacio entre columnas y al comienzo y final*/
+    align-items: center; /*para posicionar todos al centro vertical y horizontal*/
+    align-items: stretch;/*para ocupar el 100% del alto establecido -- pero tendria q comentar la de arriba*/
+    align-items: baseline; /*alinea todo a la base de la tipografia, quedarian desacomodados los box*/
+    
+    align-content: flex-end;/*para cuando tenemos 2 filas de elementos, permite que elementos de segunda linea se coloquendebajo de los elementos de la primera alineadamente*/
+    align-content: space-around; /*espaciado entre las filas y al comienzo y final*/
+}
+/*mas de flex*/
+.otra{
+    width: 200px;
+
+    flex-grow: 1;
+    /*6 cajas: colocara 4 arriba de 200px cada una y las 2 que sobran quedan abajo ocupando el 50% cada una
+        11111   11111   11111   11111
+        1111111111111   1111111111111
+    */
+    flex-shrink: 0;/*con esto le dejo siempre los 200px, incluso achicando la pantalla, no quiero menos que 200px*/
+
+    flex: 1 1 auto; /*aplica grow - shrink - automatico ... comentando los de arriba*/
+
+}
+
+.unelemento{/*le damos orden y muestra primero el de mayor prioridad (1)*/
+    order: 1;
+}
+.otroelemento{
+    order: 2;
+}
+
+/*align self para ordenar un solo elemento*/
+.unelemento{
+    align-self: flex-end; /* podria cambiarle la posicion a un contenedor en particular, pero para esto tendria que quitarle a la clase padre contenedora el align-content: ;*/
+    
+    align-self: stretch;
+    height: auto;    /*para que ocupe todo el alto del contenedor*/
+}

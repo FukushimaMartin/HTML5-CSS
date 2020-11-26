@@ -1,0 +1,94 @@
+.container{
+    margin: 0 auto;/*margen a la izq y a la derecha - arriba y abajo es cero y a los lados es automatico*/
+    /*width: 500px;*/ /* el width le va a dar el cambio al contenedor y divide 250 para cada lado*/
+    width: 90%;
+}
+
+/*cambiamos la fuente*/
+
+
+body{
+    font-family: 'Righteous', cursive;
+}
+h2{
+    font-weight: 400; /*le cambiamos el ancho a la letra*/
+}
+p{
+    font-weight: 200;
+}
+
+/* creo class para el flex y el text-center .. entonces al crear un nuevo elemento en el codigo basta con poner el nombre de la clase para que tome el efecto deseado*/
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*flex wrap impide que las columnas se achiquen al maximo.. 
+para cuando achicamos la ventana del navegador
+flew wrap hara que la columna tome el total del ancho disponible.. por lo cual no se achicara
+si lo manejamos con porcentaje y le ponemos 100% entonces siempre ocupara el total de la pantalla sin importar el tamaño de la misma
+*/
+
+.text-center{
+    text-align: center;
+}
+
+.precio{
+    font-size: 50px;
+    color: skyblue;
+}
+.column{ /*ahora cada div tiene un estilo mejorado con color y margenes*/
+    background: rgb(228, 228, 228);
+    color: #333;
+    border: 1px solid #333;
+    margin: 0 auto; /*con solo esto no queda bien vamos con el padding*/
+    padding: 10px;
+    border-radius: 5px;
+/*usamos BOX SHADOW sobre el div columna*/
+/*sombra sobre el eje x, sombra sobre eje y, un color
+positivo x = a la derecha
+positivo y = abajo
+negativos - izquierda y arriba
+
+puedo agregar un degradado antes del color
+
+box-shadow(x, y, degradado, color) 
+*/
+    box-shadow: 10px 10px 5px #888;
+
+/*al aplicar el flex wrap colocamos el ancho disponible para nuestras columnas
+el 25% de cada una + los margenes no permiten visualizar las 4, entonces vamos con menos
+pero no bajamos el porcentaje, box-sizing = border box voy a incluir el padding y el borde al calculo
+faltaria el margen, entonces es cuando usamos margin = 0(para up y down) auto(para los lados)
+*/
+    width: 23%;
+    box-sizing: border-box;
+}
+
+/*estilo al boton*/
+.btn-precio{
+    background: salmon;
+    display: block;/*color al fondo y lo pasamos de linea a bloque(ocupa todo el espacio)*/
+
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.btn-precio:hover{
+    background: rgb(173, 68, 56);
+}
+
+
+@media (max-width: 1070px){
+    .column{
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px){
+    .column{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            background: royalblue;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            margin-top: 100px;
+
+        }
+        .box1{
+            grid-column: 1 / 3;
+            /*le digo que inicie en la primera columna y finalice en la tercera*/
+            /*las columnas se cuentan la 1 bien a la izq y la ultima bien a la derecha*/
+            /*las filas arrancan de arriba (como el techo) hasta el final (como el piso)*/
+            grid-row: 1 / 4;
+            /*
+            __________ <-fila 1
+            |__|__|__| <-fila 2
+            |__|__|__| <-fila 3
+            |__|__|__| <-fila 4
+            4 filas, 4 columnas
+            */
+            /*le indico donde inicia y donde termina, puede ser 2 / 4.. y la caja se movera a la segunda posicion sea fila o columna y el resto se moveran a los espacios vacios*/
+            
+            grid-area: 2 / 1 / 3 / 4 ;
+            /*le indicamos donde inicia la fila, donde inicia la columna, donde termina la fila, donde terminal la columna*/
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">8</div>
+        <div class="box">8</div>
+        <div class="box">8</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+.margen-interno{
+    padding: 0 50px;
+}
+
+.padre{
+    display: flex;
+    flex-flow: column nowrap;
+/*colocamos el flexflow para posicionarlo en columnas y
+nowrap para que se adapte segun al tamaño establecido*/
+}
+    .header{
+        background: url(../images/bg-2.jpg);/*cambio el color por una imagen*/
+        background-position: center;/*todo esto es para q la imagen se vea completa y centrada*/
+        background-attachment: contain;
+        background-size: cover;
+
+        display: flex;
+        flex-flow: column nowrap;
+    }/*las cajas grandes de afuera en columnas*/
+        .menu{
+            background: rgba(0,0,0,.5);
+            display: flex;
+            flex-flow: row nowrap;
+            height: 60px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,.5);
+        }/*estas cajas las quiero en filas, row*/
+            .logo{
+                flex: 1 1 auto;
+            }
+                .logo a{
+                    color: #fff;
+                    font-size: 30px;
+                }
+                .logo a:hover{
+                    color: #343434;
+                }
+
+            .nav{
+                flex: 5 1 auto;
+            }/*el nav lleva 5 porque es mas grande*/
+                .nav a{
+                    color: white;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    letter-spacing: 2px;/*para q se separen las letras*/
+                }
+                .nav a:hover{
+                    color: #343434;
+                }
+
+            .social{
+                flex: 1 1 auto;
+                display: flex;
+            }
+                .social a{
+                    font-size: 10px;
+                    color: white;
+                    padding: 0 5px;
+                }
+                .social a:hover{
+                    color: #343434;
+                }
+
+        .texto-principal{
+            height: 580px;
+            display: flex;
+            align-items: center;
+        }
+            h1{
+
+                font-family: 'Lora', serif;
+                font-size: 21px;
+                color: white;
+                font-weight: 300;
+                text-align: center;
+                line-height: 1.6;
+            }
+
+    .section{
+        background: #f7f7f7;
+        display: flex;
+    }
+        .articulos{
+            background: #f7f7f7;
+            flex: 1 2 auto;
+            display: flex;
+            flex-flow: row wrap;
+        }/*en fila, pero wrap (si el contenedor no alcanza para ponerlos uno al lado del otro, lo manda para abajo*/
+            .articulo{
+                flex: 1 1 40%;
+                color: #444;
+                font-size: 13px;
+                letter-spacing: 1px;
+                margin: 10px 10px 0 0;
+                flex: 1 1 45%;
+                background: #ececec;
+            }
+                .articulo img{
+                    max-width: 100%;
+                }
+                .articulo a{
+                    color: white;
+                    font-size: 13px;
+                    padding: 10px;
+                    background:  #000;
+                    margin: 10px 0;
+                    display: inline-block;
+                }
+                .articulo a:hover{
+                    background: #546cc3;
+                }
+            .navegacion{
+                background: #000;
+                flex: 1 1 100%;
+                margin: 10px 10px 0 0;
+            }
+                .navegacion a{
+                    color: #fff;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    letter-spacing: 2px;
+                }
+            .articulos h3{
+                color: #fff;
+                font-size: 13px;
+                padding: 10px;
+                margin-top: -80px;
+            }
+            .articulo h2{
+                color: #fff;
+                font-size: 25px;
+                padding: 0px 0 10px 0;
+                text-transform: uppercase;
+            }
+        .aside{
+            flex: 1 1 auto;
+            margin: 10px 5px 10px 0px;
+        }
+        .aside h4{
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+        .aside img{
+            max-width: 100%;
+        }
+            .publicidad{
+                
+            }
+    .footer{
+        background: #000;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+        .pie{
+            text-align: center;
+        }
+            .pie a{
+                color: #fff;
+                font-size: 11px;
+                text-transform: uppercase;
+                padding: 0 10px;
+                letter-spacing: 2px;
+            }
+
+/*sitio responsive*/
+@media all and (max-width:1120px){
+    .section{
+        flex-direction: column;
+    }
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+    .aside{
+        display: flex;
+        justify-content: center;
+    }
+    h1{
+        font-size: 15px;
+    }
+    .texto-principal{
+        height: 450px;
+    }
+}
+@media all and (max-width:762px){
+    .articulos{
+        flex-direction: column;
+    }
+    h1{
+        font-size: 15px;
+    }
+}
+@media all and (max-width:650px){
+    .off{
+        display: none;
+    }
+    .nav a{
+        font-size: 25px;
+    }
+}
+@media all and (max-width:400px){
+    .aside{
+        flex-direction: column;
+    }
+}
+

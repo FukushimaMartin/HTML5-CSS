@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+
+    <style>
+        .box{
+            background: royalblue;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+        }
+        .container{
+            display: grid;
+            
+            /*grid-template-columns: 100px 100px 100px;*/
+            /*pongo medidas por cada columna que quiero, este caso son 3 - puedo poner porcentajes*/
+
+            column-gap: 10px;/*separacion entre columnas*/
+            row-gap: 5px;/*separacion entre filas*/
+            grid-gap: 15px;/*15 para todos lados, col & row*/
+
+
+            grid-template-columns: 1fr 2fr 1fr;/*otra medida, fr*/
+            grid-template-rows: 2fr 1fr;
+            height: 100vh;/*usa el 100% de la pantalla disponible, sumado a la medida fr, todo queda en proporcion*/
+
+            grid-template-columns: repeat(3, 1fr); /*repite para 3 columnas esa medida*/
+
+            /*en filas si pongo 3 medidas, aplica a las 3 primeras filas, para aplicar a todas u otras*/
+            grid-auto-rows: 4fr;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">8</div>
+        <div class="box">8</div>
+        <div class="box">8</div>
+    </div>
+</body>
+</html>

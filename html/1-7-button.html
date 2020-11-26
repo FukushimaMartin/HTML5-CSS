@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav><!--javascript, agregamos onclick para darle accion al presionar boton-->
+        <button class="boton" onclick="accion()">menu</button>
+            <a href="#" class="enlace desaparece">click aqui</a>
+        <!--agregamos una class "desaparece" en el ancla.. en el css lo desaparecemos con display: none
+            con el script vamos a hacer que aparezan cuando hacemos click en menu
+            por lo tanto haremos que quite la clase "desaparece"
+        -->
+    </nav>
+
+
+    <!--agregamos script aqui, como los style
+
+    -->
+    <script>
+        function accion(){
+            console.log("un mensaje en consola al hacer click");
+
+            var ancla = document.getElementsByClassName('enlace');/*aqui cada class enlace se guarda en la var*/
+
+            for(var i = 0; i < ancla.length; i++){ 
+                /*toma cada una de las anclas y agrega o quita la class 'desaparece' cada vez q tocamos*/
+                ancla[i].classList.toggle('desaparece');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+h1{
+    color: red;
+    font-size: 15px;
+}
+/* puedo colocar la etiqueta <style> en el html y darle estilo, pero mejor hacerlo en css */
+
+/*un h1 con ID = h1*/
+#titulo{
+    color: blue;
+    font-size: 15px;
+}
+
+/*todos los parrafos*/
+p{
+    color: rgb(0, 51, 128);
+}
+/*un parrafo con class*/
+.parrafo{
+    color: greenyellow;
+}
+/*el parrafor de arriba con 2 class*/
+.fondo{
+    background-color: grey;
+}
+
+/*margin- (el lado donde queres margen) : la cantidad en pixeles de margen*/
+h2{
+    background: tomato;
+    margin-left: 100px;
+}
+.parrafo2{
+    background: violet;
+    margin-bottom: 200px;
+}
+/*margen a todos lados*/
+.margenALL{
+    /*margin: 100px;    asi puedo poner margen a todos por igual*/
+    margin: 10px 40px 40px 200px;
+    /*margen arriba, derecha, abajo, izquierda*/
+}
+.padding{
+    /*un margen interior*/
+    background: turquoise;
+    padding: 100px;
+}
