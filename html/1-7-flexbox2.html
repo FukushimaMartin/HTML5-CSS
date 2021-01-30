@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  height: 300px;
+  /*convierte el contenedor en flex (los elementos dentro seran flexibles*/
+  
+  background-color: DodgerBlue;
+  
+  flex-direction: row; /*column o row y/o reverse*/
+  
+  flex-wrap: wrap; 
+  /*si supera la pantalla -> salto de linea ; nowrap ajusta a la pantalla*/
+  
+  /* flex-flow (direction + wrap) : row wrap; */
+  
+  justify-content: center; /*para posicionar elementos flexibles*/
+  /*si es una row el inicio es a la izquierda y el final a la derecha, entonces center es medio horizontal
+    si es una column el inicio es arriba y el final es abajo, entonces center es medio vertical*/
+  /*flex-start (al inicio, predet); flex-end (al final)*/
+  /*space-around (con espacios antes, entre y despues) */
+  /*space-between (con espacios entre los elementos) */
+  
+  align-items: center; /*para alinear los elementos flexibles*/
+  /*flex-start (al inicio, arriba)*/
+  /*flex-end (al final, abajo*/
+  /*stretch (estiramiento, ocupa todo el alto disponible) */
+  /*baseline (toma como linea base la letra y alinea cada bloque con la misma, esto se nota con bloques de diferente tamaño) */
+  
+  align-content: stretch; /*para alinear filas flexibles*/
+  /*aumentamos el ancho de los bloques y la pantalla, y con la funcion wrap formamos 2 filas*/
+  /*space-beetwen (espacio entre las filas*/
+  /*space-around (espacio antes, entre y despues de las filas*/
+}
+
+.flex-container > div {
+  background-color: #117321;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 200px;
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+<p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+
+<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+
+</body>
+</html>
